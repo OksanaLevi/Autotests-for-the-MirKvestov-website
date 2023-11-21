@@ -2,14 +2,11 @@ package ru.mirkvwstov.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.*;
+import ru.mirkvwstov.components.SearchResultsTableComponent;
 import ru.mirkvwstov.pages.PageObject;
 import ru.mirkvwstov.utils.TestData;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
@@ -17,11 +14,12 @@ public class MainPageTests extends TestBase {
 
     PageObject pageObject = new PageObject();
     TestData testData = new TestData();
+    SearchResultsTableComponent searchResults = new SearchResultsTableComponent();
 
     @Test
     @Tags({
-            @Tag ("positive"),
-            @Tag ("main")
+            @Tag("positive"),
+            @Tag("main")
     })
     @DisplayName("Checking the presence of the minimum required elements on the main page")
     void testOfRequiredElementsOnTheMainPage() {
@@ -41,30 +39,50 @@ public class MainPageTests extends TestBase {
             pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
         });
 
-}
+    }
 
     @Test
     @Tags({
-            @Tag ("positive"),
-            @Tag ("main")
+            @Tag("positive"),
+            @Tag("main")
     })
     @DisplayName("Checking the use of filters on the main page")
-    void testFiltersOnTheMainPage () {
-        step("Choose a scary quest type", (listOfQuestTypes) -> {
+    void testFiltersOnTheMainPage() {
+        step("Choose a scary quest type", () -> {
             pageObject.selectValueFromTheDropdownList(testData.scaryQuest);
         });
-        step("Choose a scary quest type", (listOfNumberOfPlayers) -> {
+        step("Choose a scary quest type", () -> {
             pageObject.selectValueFromTheDropdownList(testData.numberOfPlayers);
         });
-        step("Select quest time", (listOfNumberOfPlayers) -> {
+        step("Select quest data", () -> {
+            pageObject.selectQuestData(testData.questDateSelectionMenu);
+        });
+        step("Select quest time", () -> {
             pageObject.selectValueFromTheDropdownList(testData.questTime);
         });
+        step("Perform a search using the specified filters", () -> {
+            pageObject.selectValueFromTheDropdownList(testData.questSearchButton);
+        });
 
+        step("Checking the display of the form with selected filters", () -> {
+            pageObject.resultsTableOpened();
+        });
+        step("Checking the display of the form with selected filters", () -> {
+            pageObject.resultsTableOpened();
+        });
+        step("Checking if the selected filters are in the search results", () -> {
+            searchResults.searchResultsForm(testData.scaryQuest)
+                    .searchResultsForm(testData.questTime)
+                    .searchResultsForm(testData.numberOfPlayers);
+        });
+
+        step("Checking whether the type of quest selected in the filter is in the search results", () -> {
+            pageObject.questTypeCheck(testData.fieldWithQuestType);
+        });
     }
 
     @BeforeEach
     void beforeEach() {
-//        Configuration.baseUrl = "https://mir-kvestov.ru/";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
         Selenide.open("https://mir-kvestov.ru/");

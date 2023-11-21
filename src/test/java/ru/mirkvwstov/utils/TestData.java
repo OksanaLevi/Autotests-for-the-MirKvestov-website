@@ -16,7 +16,8 @@ public class TestData {
             questTime = "с 20:00 до 21:00",
     //страница квеста "Проклятие"
             titleOnQuestPage = "Проклятие",
-            nameOfPriceTable = "Стоимость игры:";
+            nameOfPriceTable = "Стоимость игры:",
+            fieldWithQuestType = "Уровень страха";
 
 
 

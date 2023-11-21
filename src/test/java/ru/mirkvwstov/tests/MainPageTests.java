@@ -1,15 +1,16 @@
 package ru.mirkvwstov.tests;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.PageObject;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 public class MainPageTests extends TestBase {
@@ -24,11 +25,8 @@ public class MainPageTests extends TestBase {
     })
     @DisplayName("Checking the presence of the minimum required elements on the main page")
     void testOfRequiredElementsOnTheMainPage() {
-        step("Open main page", () -> {
-            pageObject.openPage();
-        });
         step("Checking the page title", () -> {
-            pageObject.checkHeader(testData.heaherMainPage);
+            pageObject.checkHeaderOnMainPage(testData.heaherMainPage);
         });
         step("Checking the presence of filters for searching quests", () -> {
             pageObject.checkingForFilterPresence(testData.questTypeFilter);
@@ -38,11 +36,41 @@ public class MainPageTests extends TestBase {
             pageObject.findQuestUsingSpecifiedFilters(testData.questSearchButton);
         });
         step("Checking for the presence of popular quests and successful transition to one of them", () -> {
+            pageObject.goToQuestPage(testData.titleOnQuestPage);
+            pageObject.checkHeaderOnPageQuest(testData.titleOnQuestPage);
+            pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
+        });
 
-            $(".quests-popular .quest-tile-1__title").$(byText("Проклятие")).click();
-            $("h1").shouldHave(text("Проклятие"));
-            $(".timetable").shouldHave(text("Стоимость игры:"));
+}
+
+    @Test
+    @Tags({
+            @Tag ("positive"),
+            @Tag ("main")
+    })
+    @DisplayName("Checking the use of filters on the main page")
+    void testFiltersOnTheMainPage () {
+        step("Choose a scary quest type", (listOfQuestTypes) -> {
+            pageObject.selectValueFromTheDropdownList(testData.scaryQuest);
+        });
+        step("Choose a scary quest type", (listOfNumberOfPlayers) -> {
+            pageObject.selectValueFromTheDropdownList(testData.numberOfPlayers);
+        });
+        step("Select quest time", (listOfNumberOfPlayers) -> {
+            pageObject.selectValueFromTheDropdownList(testData.questTime);
         });
 
     }
+
+    @BeforeEach
+    void beforeEach() {
+//        Configuration.baseUrl = "https://mir-kvestov.ru/";
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.browserSize = "1920x1080";
+        Selenide.open("https://mir-kvestov.ru/");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
+    }
+
+
 }

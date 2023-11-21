@@ -24,12 +24,6 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
     }
 
-    @BeforeAll
-    static void beforeAll() {
-//        Configuration.baseUrl = "https://mir-kvestov.ru/";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
-    }
 //    @BeforeEach
 //    void addListener() {
 //        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());

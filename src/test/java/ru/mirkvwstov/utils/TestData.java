@@ -14,6 +14,9 @@ public class TestData {
             scaryQuest = "Страшные",
             numberOfPlayers = "4",
             questTime = "с 20:00 до 21:00",
+    //сортировка на главной странице
+            byPopularity = "По популярности",
+            byRating = "Народный рейтинг",
     //страница квеста
             titleOnQuestPage = "Сокровища бога Ра",
             nameOfPriceTable = "Стоимость игры:",

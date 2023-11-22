@@ -4,13 +4,14 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
-public class QuestPageTests extends TestBase{
+public class QuestPageTests extends TestBase {
 
     PageObject pageObject = new PageObject();
     TestData testData = new TestData();
@@ -27,7 +28,7 @@ public class QuestPageTests extends TestBase{
 
     @Test
     @Tags({
-            @Tag("positive"),
+            @Tag("smoke"),
             @Tag("quest")
     })
     @DisplayName("Checking for required quest blocks")

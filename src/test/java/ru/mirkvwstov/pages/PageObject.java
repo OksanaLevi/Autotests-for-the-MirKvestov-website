@@ -1,6 +1,7 @@
 package ru.mirkvwstov.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import dev.failsafe.internal.util.Assert;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -15,6 +16,8 @@ public class PageObject {
             questSearchButton = $(".row"),
             firstDateFromTheList = $("#date"),
             resultsSearch = $("#search-form"),
+            sortMenu = $(".sort__select"),
+            numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
     //на странице квеста
             questPage = $(".quests-popular .quest-tile-1__title"),
             headerQuestPage = $("h1"),
@@ -87,5 +90,25 @@ public class PageObject {
         block.shouldHave(text(content));
 
         return this;
+    }
+
+    //проверки для теста sortingQuestsByPopularity
+    public PageObject selectSorting(String value) {
+        sortMenu.click();
+        $(byText(value)).click();
+
+        return this;
+    }
+    public PageObject checkThePopularityOfTheQuest() {
+        $(".quest-tile-1").click();
+        String teamsPassedTheQuest = numberOfTeams.getText();
+
+        teamsPassedTheQuest = teamsPassedTheQuest.substring(0, teamsPassedTheQuest.indexOf(" "));
+        int numberOfTeams = Integer.parseInt(teamsPassedTheQuest);
+        Assert.isTrue(numberOfTeams > 900, "Квест из результатов сортировки не является популярным");
+        return this;
+
+
+
     }
 }

@@ -1,10 +1,10 @@
 package ru.mirkvwstov.tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.components.SearchResultsTableComponent;
 import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -18,7 +18,7 @@ public class MainPageTests extends TestBase {
 
     @Test
     @Tags({
-            @Tag("positive"),
+            @Tag("smoke"),
             @Tag("main")
     })
     @DisplayName("Checking the presence of the minimum required elements on the main page")
@@ -38,13 +38,13 @@ public class MainPageTests extends TestBase {
             pageObject.checkHeaderOnPageQuest(testData.titleOnQuestPage);
             pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
         });
-
     }
 
     @Test
     @Tags({
-            @Tag("positive"),
-            @Tag("main")
+            @Tag("smoke"),
+            @Tag("main"),
+            @Tag("filters")
     })
     @DisplayName("Checking the use of filters on the main page")
     void testFiltersOnTheMainPage() {

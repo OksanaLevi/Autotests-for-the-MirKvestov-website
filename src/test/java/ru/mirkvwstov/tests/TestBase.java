@@ -1,11 +1,14 @@
 package ru.mirkvwstov.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TestBase {
 
@@ -17,8 +20,15 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
     }
 
-    @AfterEach
-    void addAttachments() {
-        closeWebDriver();
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.baseUrl = "https://mir-kvestov.ru";
+        Configuration.browserSize = "1920x1080";
+
+//    @AfterEach
+//    void addAttachments() {
+//        closeWebDriver();
+//    }
     }
 }

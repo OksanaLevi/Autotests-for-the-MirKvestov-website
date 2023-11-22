@@ -24,7 +24,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Checking the presence of the minimum required elements on the main page")
     void testOfRequiredElementsOnTheMainPage() {
         step("Checking the page title", () -> {
-            pageObject.checkHeaderOnMainPage(testData.heaherMainPage);
+            pageObject.checkHeaderOnMainPage(testData.headerMainPage);
         });
         step("Checking the presence of filters for searching quests", () -> {
             pageObject.checkingForFilterPresence(testData.questTypeFilter);
@@ -83,9 +83,7 @@ public class MainPageTests extends TestBase {
 
     @BeforeEach
     void beforeEach() {
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
-        Selenide.open("https://mir-kvestov.ru/");
+        Selenide.open("/");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }

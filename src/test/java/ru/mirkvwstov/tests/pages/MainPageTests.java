@@ -1,10 +1,11 @@
-package ru.mirkvwstov.tests;
+package ru.mirkvwstov.tests.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.components.SearchResultsTableComponent;
 import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;

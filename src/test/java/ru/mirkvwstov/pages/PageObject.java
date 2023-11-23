@@ -1,9 +1,12 @@
 package ru.mirkvwstov.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -14,10 +17,9 @@ public class PageObject {
             filterQuestType = $("#search-form"),
             questSearchButton = $(".row"),
             firstDateFromTheList = $("#date"),
-            resultsSearch = $("#search-form"),
             sortMenu = $(".sort__select"),
+    //сравнение квестов
             numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
-            questCompareBtn = $(".quest-tile__compare"),
     //на странице квеста
             questPage = $(".quests-popular .quest-tile-1__title"),
             eventType = $(".game-type"),
@@ -26,6 +28,10 @@ public class PageObject {
             questRating = $(".quest-rating-populi__value"),
     //на странице с результатами поиска
             anyQuestFromTheList = $(".quest-tile-1");
+
+    ElementsCollection
+            questCompareBtn = $$(".js-quest-compare-btn"),
+            questInTableResults  = $$(".owl-item");
 
 
     //проверки для теста testOfRequiredElementsOnTheMainPage
@@ -71,9 +77,9 @@ public class PageObject {
 
         return this;
     }
-    public PageObject resultsTableOpened() {
-        resultsSearch.should(appear);
-        resultsSearch.shouldHave(text("Тип игры"));
+    public PageObject resultsTableOpened(SelenideElement table, String value) {
+        table.should(appear);
+        table.shouldHave(text(value));
 
         return this;
     }
@@ -118,7 +124,17 @@ public class PageObject {
     }
 
     //для тестов класса QuestComparisonTests
-    public void addQuestToComparisonPage() {
-        questCompareBtn.sibling(0).click();
+    public PageObject addQuestToComparisonPage(int value) {
+        questCompareBtn.get(value).click();
+        return this;
+    }
+    public PageObject openComparisonPage (String value) {
+        open(value);
+        return this;
+    }
+    public PageObject checkThatTwoQuestsInTheComparisonTable () {
+        questInTableResults.shouldHave(size(2));
+
+        return this;
     }
 }

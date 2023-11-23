@@ -10,6 +10,10 @@ public class TestData {
             questDateSelectionMenu = "Дата",
             questTimeMenu = "Время",
             questSearchButton ="Найти",
+            scaryQuestTableResults = "Тип игры",
+    //страница сравнения
+            pageCompare = "https://mir-kvestov.ru/compare",
+            requiredWordOnComparisonPage = "Убрать из сравнения",
     // фильтры на главной странице
             scaryQuest = "Страшные",
             numberOfPlayers = "4",
@@ -26,5 +30,7 @@ public class TestData {
             blockTitleWithContacts = "Контакты",
             questAssessment = "10.0";
 
-
+    public int
+            questNumberOne = 0,
+            questNumberTwo = 1;
 }

@@ -1,14 +1,9 @@
 package ru.mirkvwstov.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TestBase {
 
@@ -17,7 +12,7 @@ public class TestBase {
         options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        Configuration.browserCapabilities = capabilities;
+//        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeAll
@@ -25,11 +20,6 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://mir-kvestov.ru";
         Configuration.browserSize = "1920x1080";
-//        Configuration.holdBrowserOpen = true;
-
-//    @AfterEach
-//    void addAttachments() {
-//        closeWebDriver();
-//    }
+        Configuration.holdBrowserOpen = true;
     }
 }

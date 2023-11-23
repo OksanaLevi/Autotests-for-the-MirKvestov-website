@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.PageObject;
-import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -16,11 +15,11 @@ public class QuestPageTests extends TestBase {
     PageObject pageObject = new PageObject();
     TestData testData = new TestData();
 
-//Параметры проверяемой страницы квеста
+    //Параметры проверяемой страницы квеста
     String questUrl = "/quests/quest-stars-the-astral",
             descriptionQuest = "Вы – группа друзей, которая жаждет погрузиться в астрал",
             timeQuest = "10:00",
-        contactsQuest = " м.";
+            contactsQuest = " м.";
     SelenideElement
             descriptionBlock = $("#description"),
             reservationBlock = $("#timetable"),

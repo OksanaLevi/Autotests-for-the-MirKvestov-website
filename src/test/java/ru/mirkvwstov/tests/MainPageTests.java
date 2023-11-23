@@ -1,12 +1,13 @@
 package ru.mirkvwstov.tests;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.components.SearchResultsTableComponent;
 import ru.mirkvwstov.pages.PageObject;
-import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
@@ -15,6 +16,8 @@ public class MainPageTests extends TestBase {
     PageObject pageObject = new PageObject();
     TestData testData = new TestData();
     SearchResultsTableComponent searchResults = new SearchResultsTableComponent();
+
+    SelenideElement resultsSearch = $("#search-form");
 
     @Test
     @Tags({
@@ -65,7 +68,7 @@ public class MainPageTests extends TestBase {
         });
 
         step("Проверяем, что открылась страница с результатми поиска", () -> {
-            pageObject.resultsTableOpened();
+            pageObject.resultsTableOpened(resultsSearch, testData.scaryQuestTableResults);
         });
         step("Проверяем наличие выбранных ранее фильтров в результатах поиска", () -> {
             searchResults.searchResultsForm(testData.scaryQuest)

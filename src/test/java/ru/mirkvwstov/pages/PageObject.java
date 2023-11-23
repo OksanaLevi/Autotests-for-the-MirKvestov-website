@@ -3,8 +3,9 @@ package ru.mirkvwstov.pages;
 import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
 
-import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Condition.text;
+import javax.xml.xpath.XPath;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,8 +24,10 @@ public class PageObject {
             headerQuestPage = $("h1"),
             questPrice = $(".timetable"),
             questParameters = $(".masthead"),
+            questRating = $(".quest-rating-populi__value"),
     //на странице с результатами поиска
             anyQuestFromTheList = $(".quest-tile-1");
+//    XPath sortMenu = //*[contains(@class, 'sort__dropdown')]//*[contains(text(), 'Народный рейтинг')];
 
 
     //проверки для теста testOfRequiredElementsOnTheMainPage
@@ -95,20 +98,24 @@ public class PageObject {
     //проверки для теста sortingQuestsByPopularity
     public PageObject selectSorting(String value) {
         sortMenu.click();
-        $(byText(value)).click();
+        $(".sort__dropdown").$(byText(value)).click();
 
         return this;
     }
     public PageObject checkThePopularityOfTheQuest() {
-        $(".quest-tile-1").click();
+        $(anyQuestFromTheList).click();
         String teamsPassedTheQuest = numberOfTeams.getText();
 
         teamsPassedTheQuest = teamsPassedTheQuest.substring(0, teamsPassedTheQuest.indexOf(" "));
         int numberOfTeams = Integer.parseInt(teamsPassedTheQuest);
         Assert.isTrue(numberOfTeams > 900, "Квест из результатов сортировки не является популярным");
+
         return this;
+    }
+    public PageObject checkTheRatingOfTheQuest(String value) {
+        $(anyQuestFromTheList).click();
+        questRating.shouldHave(text(value));
 
-
-
+        return this;
     }
 }

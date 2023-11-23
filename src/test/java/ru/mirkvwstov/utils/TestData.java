@@ -23,6 +23,8 @@ public class TestData {
             fieldWithQuestType = "Уровень страха",
             blockTitleWithDescription = "Описание",
             blockTitleWithReservation = "Онлайн бронирование",
-            blockTitleWithContacts = "Контакты";
+            blockTitleWithContacts = "Контакты",
+            questAssessment = "10.0";
+
 
 }

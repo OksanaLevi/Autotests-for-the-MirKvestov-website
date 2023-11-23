@@ -21,19 +21,19 @@ public class MainPageTests extends TestBase {
             @Tag("smoke"),
             @Tag("main")
     })
-    @DisplayName("Checking the presence of the minimum required elements on the main page")
+    @DisplayName("Проверка наличия обязательных блоков на главной странице")
     void testOfRequiredElementsOnTheMainPage() {
-        step("Checking the page title", () -> {
+        step("Проверяем заголовок страницы", () -> {
             pageObject.checkHeaderOnMainPage(testData.headerMainPage);
         });
-        step("Checking the presence of filters for searching quests", () -> {
+        step("Проверяем наличие фильтров для поиска квеста", () -> {
             pageObject.checkingForFilterPresence(testData.questTypeFilter);
             pageObject.checkingForFilterPresence(testData.playerCountFilter);
             pageObject.checkingForFilterPresence(testData.questDateSelectionMenu);
             pageObject.checkingForFilterPresence(testData.questTimeMenu);
             pageObject.findQuestUsingSpecifiedFilters(testData.questSearchButton);
         });
-        step("Checking for the presence of popular quests and successful transition to one of them", () -> {
+        step("Проверка наличия квестов и переход в один из них", () -> {
             pageObject.goToQuestPage();
             pageObject.checkHeaderOnPageQuest(testData.eventTypeOnQuestPage);
             pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
@@ -46,37 +46,34 @@ public class MainPageTests extends TestBase {
             @Tag("main"),
             @Tag("filters")
     })
-    @DisplayName("Checking the use of filters on the main page")
+    @DisplayName("Проверяем работу фильтров на главной странице")
     void testFiltersOnTheMainPage() {
-        step("Choose a scary quest type", () -> {
+        step("Выбираем тип квеста - страшный", () -> {
             pageObject.selectValueFromTheDropdownList(testData.scaryQuest);
         });
-        step("Choose a scary quest type", () -> {
+        step("Выбираем количество участников квеста", () -> {
             pageObject.selectValueFromTheDropdownList(testData.numberOfPlayers);
         });
-        step("Select quest data", () -> {
+        step("Выбираем дату квеста", () -> {
             pageObject.selectQuestData(testData.questDateSelectionMenu);
         });
-        step("Select quest time", () -> {
+        step("Выбираем время квеста", () -> {
             pageObject.selectValueFromTheDropdownList(testData.questTime);
         });
-        step("Perform a search using the specified filters", () -> {
+        step("Выполняем поиск квестов по выбранным фильтрам", () -> {
             pageObject.selectValueFromTheDropdownList(testData.questSearchButton);
         });
 
-        step("Checking the display of the form with selected filters", () -> {
+        step("Проверяем, что открылась страница с результатми поиска", () -> {
             pageObject.resultsTableOpened();
         });
-        step("Checking the display of the form with selected filters", () -> {
-            pageObject.resultsTableOpened();
-        });
-        step("Checking if the selected filters are in the search results", () -> {
+        step("Проверяем наличие выбранных ранее фильтров в результатах поиска", () -> {
             searchResults.searchResultsForm(testData.scaryQuest)
                     .searchResultsForm(testData.questTime)
                     .searchResultsForm(testData.numberOfPlayers);
         });
 
-        step("Checking whether the type of quest selected in the filter is in the search results", () -> {
+        step("Переход в квест из списка с результатами и проверка его типа на соответствие с выбранным", () -> {
             pageObject.questTypeCheck(testData.fieldWithQuestType);
         });
     }

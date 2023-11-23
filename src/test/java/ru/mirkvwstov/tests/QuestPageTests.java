@@ -31,15 +31,15 @@ public class QuestPageTests extends TestBase {
             @Tag("smoke"),
             @Tag("quest")
     })
-    @DisplayName("Checking for required quest blocks")
+    @DisplayName("Проверка наличия обязательных блоков на странице квеста")
     void testForThePresenceOfRequiredBlocks() {
-        step("Checking the presence of a block with a description of the quest", () -> {
+        step("Проверка блока с описанием квеста", () -> {
             pageObject.checkingForBlockPresence(descriptionBlock, testData.blockTitleWithDescription, descriptionQuest);
         });
-        step("Checking the availability of a block with a schedule quest", () -> {
+        step("Проверка блока с расписанием квестов", () -> {
             pageObject.checkingForBlockPresence(reservationBlock, testData.blockTitleWithReservation, timeQuest);
         });
-        step("Checking the presence of a block with quest contacts", () -> {
+        step("Проверка блока с контактами квеста", () -> {
             pageObject.checkingForBlockPresence(contactsBlock, testData.blockTitleWithContacts, contactsQuest);
         });
     }

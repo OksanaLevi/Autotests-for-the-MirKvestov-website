@@ -19,12 +19,12 @@ public class SortingQuestsTests extends TestBase {
             @Tag("main"),
             @Tag("sorting")
     })
-    @DisplayName("Checking the sorting of quests by popularity")
-    void sortingQuestsByPopularity() {
-        step("Sort quests by popularity", () -> {
+    @DisplayName("Проверка сортировки квестов по популярности")
+    void sortingQuestsByPopularityTest() {
+        step("Сортируем квесты по популярности", () -> {
             pageObject.selectSorting(testData.byPopularity);
         });
-        step("Check the popularity of the first quest in the list with results", () -> {
+        step("Проверяем популярность квеста из списка с результатами сортировки", () -> {
             pageObject.checkThePopularityOfTheQuest();
         });
     }
@@ -35,12 +35,12 @@ public class SortingQuestsTests extends TestBase {
             @Tag("main"),
             @Tag("sorting")
     })
-    @DisplayName("Checking the sorting of quests by rating")
-    void sortingQuestsByRating() {
-        step("Sort quests by rating", () -> {
+    @DisplayName("Проверка сортировки квестов по рейтингу")
+    void sortingQuestsByRatingTest() {
+        step("Сортируем квесты по рейтингу", () -> {
             pageObject.selectSorting(testData.byRating);
         });
-        step("Check the rating of the first quest in the list with results", () -> {
+        step("Проверяем рейтинг квеста из списка с результатами сортировки", () -> {
             pageObject.checkTheRatingOfTheQuest(testData.questAssessment);
         });
     }

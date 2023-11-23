@@ -3,8 +3,6 @@ package ru.mirkvwstov.pages;
 import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
 
-import javax.xml.xpath.XPath;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -19,6 +17,7 @@ public class PageObject {
             resultsSearch = $("#search-form"),
             sortMenu = $(".sort__select"),
             numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
+            questCompareBtn = $(".quest-tile__compare"),
     //на странице квеста
             questPage = $(".quests-popular .quest-tile-1__title"),
             eventType = $(".game-type"),
@@ -27,7 +26,6 @@ public class PageObject {
             questRating = $(".quest-rating-populi__value"),
     //на странице с результатами поиска
             anyQuestFromTheList = $(".quest-tile-1");
-//    XPath sortMenu = //*[contains(@class, 'sort__dropdown')]//*[contains(text(), 'Народный рейтинг')];
 
 
     //проверки для теста testOfRequiredElementsOnTheMainPage
@@ -87,7 +85,7 @@ public class PageObject {
         return this;
     }
 
-    //проверки для теста testForThePresenceOfRequiredBlocks
+    //проверки для тестов класса QuestPageTests
     public PageObject checkingForBlockPresence(SelenideElement block, String header, String content) {
         block.shouldHave(text(header));
         block.shouldHave(text(content));
@@ -95,7 +93,7 @@ public class PageObject {
         return this;
     }
 
-    //проверки для теста sortingQuestsByPopularity
+    //проверки для тестов класса SortingQuestsTests
     public PageObject selectSorting(String value) {
         sortMenu.click();
         $(".sort__dropdown").$(byText(value)).click();
@@ -117,5 +115,10 @@ public class PageObject {
         questRating.shouldHave(text(value));
 
         return this;
+    }
+
+    //для тестов класса QuestComparisonTests
+    public void addQuestToComparisonPage() {
+        questCompareBtn.sibling(0).click();
     }
 }

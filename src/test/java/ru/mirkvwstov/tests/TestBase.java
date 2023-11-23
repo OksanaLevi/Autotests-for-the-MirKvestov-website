@@ -25,6 +25,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://mir-kvestov.ru";
         Configuration.browserSize = "1920x1080";
+//        Configuration.holdBrowserOpen = true;
 
 //    @AfterEach
 //    void addAttachments() {

@@ -21,7 +21,7 @@ public class PageObject {
             numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
     //на странице квеста
             questPage = $(".quests-popular .quest-tile-1__title"),
-            headerQuestPage = $("h1"),
+            eventType = $(".game-type"),
             questPrice = $(".timetable"),
             questParameters = $(".masthead"),
             questRating = $(".quest-rating-populi__value"),
@@ -46,13 +46,13 @@ public class PageObject {
 
         return this;
     }
-    public PageObject goToQuestPage(String value) {
-        questPage.$(byText(value)).click();
+    public PageObject goToQuestPage() {
+        questPage.click();
 
         return this;
     }
     public PageObject checkHeaderOnPageQuest(String value) {
-        headerQuestPage.shouldHave(text(value));
+        eventType.shouldHave(text(value));
 
         return this;
     }

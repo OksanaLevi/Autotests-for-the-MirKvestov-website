@@ -18,7 +18,7 @@ public class TestData {
             byPopularity = "По популярности",
             byRating = "Народный рейтинг",
     //страница квеста
-            titleOnQuestPage = "Сокровища бога Ра",
+            eventTypeOnQuestPage = "Квест",
             nameOfPriceTable = "Стоимость игры:",
             fieldWithQuestType = "Уровень страха",
             blockTitleWithDescription = "Описание",

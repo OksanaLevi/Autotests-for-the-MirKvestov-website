@@ -34,8 +34,8 @@ public class MainPageTests extends TestBase {
             pageObject.findQuestUsingSpecifiedFilters(testData.questSearchButton);
         });
         step("Checking for the presence of popular quests and successful transition to one of them", () -> {
-            pageObject.goToQuestPage(testData.titleOnQuestPage);
-            pageObject.checkHeaderOnPageQuest(testData.titleOnQuestPage);
+            pageObject.goToQuestPage();
+            pageObject.checkHeaderOnPageQuest(testData.eventTypeOnQuestPage);
             pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
         });
     }

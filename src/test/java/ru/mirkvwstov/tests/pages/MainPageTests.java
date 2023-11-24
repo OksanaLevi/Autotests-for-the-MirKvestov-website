@@ -38,8 +38,8 @@ public class MainPageTests extends TestBase {
             pageObject.findQuestUsingSpecifiedFilters(testData.questSearchButton);
         });
         step("Проверка наличия квестов и переход в один из них", () -> {
-            pageObject.goToQuestPage();
-            pageObject.checkHeaderOnPageQuest(testData.eventTypeOnQuestPage);
+            pageObject.goToQuestPage(testData.questNumberOne);
+            pageObject.checkHeaderOnPageQuest(testData.eventTypeOnQuestPageQuest);
             pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
         });
     }

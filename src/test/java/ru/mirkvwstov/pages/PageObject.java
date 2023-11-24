@@ -1,5 +1,6 @@
 package ru.mirkvwstov.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
@@ -21,7 +22,6 @@ public class PageObject {
     //сравнение квестов
             numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
     //на странице квеста
-            questPage = $(".quests-popular .quest-tile-1__title"),
             eventType = $(".game-type"),
             questPrice = $(".timetable"),
             questParameters = $(".masthead"),
@@ -30,6 +30,7 @@ public class PageObject {
             anyQuestFromTheList = $(".quest-tile-1");
 
     ElementsCollection
+            questPage = $$(".quest-tile-1"),
             questCompareBtn = $$(".js-quest-compare-btn"),
             questInTableResults  = $$(".owl-item");
 
@@ -50,13 +51,13 @@ public class PageObject {
 
         return this;
     }
-    public PageObject goToQuestPage() {
-        questPage.click();
+    public PageObject goToQuestPage(int value) {
+        questPage.get(value).click();
 
         return this;
     }
-    public PageObject checkHeaderOnPageQuest(String value) {
-        eventType.shouldHave(text(value));
+    public PageObject checkHeaderOnPageQuest(String quest) {
+        eventType.shouldHave(text(quest));
 
         return this;
     }
@@ -126,6 +127,7 @@ public class PageObject {
     //для тестов класса QuestComparisonTests
     public PageObject addQuestToComparisonPage(int value) {
         questCompareBtn.get(value).click();
+
         return this;
     }
     public PageObject openComparisonPage (String value) {

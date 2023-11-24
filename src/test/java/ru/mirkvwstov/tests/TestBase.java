@@ -12,7 +12,7 @@ public class TestBase {
         options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-//        Configuration.browserCapabilities = capabilities;
+        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeAll
@@ -20,6 +20,6 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://mir-kvestov.ru";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
     }
 }

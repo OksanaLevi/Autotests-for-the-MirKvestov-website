@@ -22,7 +22,7 @@ public class TestData {
             byPopularity = "По популярности",
             byRating = "Народный рейтинг",
     //страница квеста
-            eventTypeOnQuestPage = "Квест",
+            eventTypeOnQuestPageQuest = "Квест",
             nameOfPriceTable = "Стоимость игры:",
             fieldWithQuestType = "Уровень страха",
             blockTitleWithDescription = "Описание",

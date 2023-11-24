@@ -51,3 +51,39 @@ tasks.withType(Test) {
         }
     }
 }
+
+task smoke_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("smoke")
+    }
+}
+
+task main_page_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("main")
+    }
+}
+
+task filters_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("filters")
+    }
+}
+
+task quest_page_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("quest")
+    }
+}
+
+task sorting_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("sorting")
+    }
+}
+
+task comparison_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("comparison")
+    }
+}

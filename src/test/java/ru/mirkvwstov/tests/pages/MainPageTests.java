@@ -2,6 +2,9 @@ package ru.mirkvwstov.tests.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.components.SearchResultsTableComponent;
 import ru.mirkvwstov.pages.PageObject;
@@ -12,6 +15,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
+@Epic("Главная страница сайта Мир Квестов")
+@Story("Оформление блоков на главной странице")
+@Owner("Левинская Оксана")
 public class MainPageTests extends TestBase {
 
     PageObject pageObject = new PageObject();
@@ -25,8 +31,11 @@ public class MainPageTests extends TestBase {
             @Tag("smoke"),
             @Tag("main")
     })
+    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка наличия обязательных блоков на главной странице")
     void testOfRequiredElementsOnTheMainPage() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         step("Проверяем заголовок страницы", () -> {
             pageObject.checkHeaderOnMainPage(testData.headerMainPage);
         });
@@ -50,8 +59,11 @@ public class MainPageTests extends TestBase {
             @Tag("main"),
             @Tag("filters")
     })
+    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверяем работу фильтров на главной странице")
     void testFiltersOnTheMainPage() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         step("Выбираем тип квеста - страшный", () -> {
             pageObject.selectValueFromTheDropdownList(testData.scaryQuest);
         });

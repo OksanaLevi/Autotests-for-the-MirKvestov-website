@@ -2,6 +2,9 @@ package ru.mirkvwstov.tests.function;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.PageObject;
 import ru.mirkvwstov.tests.TestBase;
@@ -11,20 +14,27 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
+@Epic("Главная страница сайта Мир Квестов")
+@Story("Сравнение квестов")
+@Owner("Левинская Оксана")
 public class QuestComparisonTests extends TestBase {
+
 
     PageObject pageObject = new PageObject();
     TestData testData = new TestData();
 
-    SelenideElement resultsTable = $(".owl-wrapper-outer");
+    private final SelenideElement resultsTable = $(".owl-wrapper-outer");
 
     @Test
     @Tags({
             @Tag("smoke"),
             @Tag("comparison")
     })
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Проверка функции сравнения 2 квестов")
     void compareTwoQuestsTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         step("Добавить первый квест для сравнения", () -> {
             pageObject.addQuestToComparisonPage(testData.questNumberOne);
         });

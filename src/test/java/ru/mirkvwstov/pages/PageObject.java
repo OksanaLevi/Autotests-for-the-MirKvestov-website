@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PageObject {
-    SelenideElement
+    private final SelenideElement
     //на главной странице
             headerMainPage = $("h1"),
             filterQuestType = $("#search-form"),
@@ -29,7 +29,7 @@ public class PageObject {
     //на странице с результатами поиска
             anyQuestFromTheList = $(".quest-tile-1");
 
-    ElementsCollection
+    private final ElementsCollection
             questPage = $$(".quest-tile-1"),
             questCompareBtn = $$(".js-quest-compare-btn"),
             questInTableResults  = $$(".owl-item");

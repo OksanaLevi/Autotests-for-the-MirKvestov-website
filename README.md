@@ -1,24 +1,14 @@
-<h1>В проекте реализованы UI тесты для <a href='https://mir-kvestov.ru'>сайта "Мир квестов"</a></h1>
+<h2>В проекте реализованы UI тесты для <a href='https://mir-kvestov.ru'>сайта "Мир квестов"</a></h2>
 
-## Оглавление
-+ [Стек проекта](#projectStack)
-+ [Архитектура проекта](#projectArchitecture)
-+ [Запуск тестов](#runningTests)
-    + [Запуск тестов локально](#runningTestsLocal)
-    + [Запуск тестов в Jenkins](#runningTestsJenkins)
-+ [Результаты](#results)
-    + [Allure отчет о прохождении тестов](#resultsAllure)
-    + [Результаты выполнения API запроса в Allure отчете](#apiResultsInAllure)
-    + [Результаты тестирования в TMS](#resultsInTms')
-    + [Результаты в Jira](#resultsInJira)
-    + [Сценарии тестирования в TMS](#testCaseInTms)
-    + [Уведомления](#resultNotification)
-    + [Видео прохождения тестов](#resultVideo)
+## Содержание
+> ➠ [Запуск тестов из терминала](#запуск-тестов-из-терминала)
+>
+> ➠ [Запуск тестов в Jenkins](#-удаленный-запуск-тестов-в-Jenkins)
 
 
 <h2><a name='projectStack'>:book:Стек проекта:</a></h2>
 <p align="center">
-    <a href="#"><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px"/></a>
+    <a href="#"><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="#"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>
     <a href="#"><img title="JUnit5" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/JUnit5.svg" width="50px"/></a>
     <a href="#"><img title="Selenide" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenide.svg" width="50px"/></a>

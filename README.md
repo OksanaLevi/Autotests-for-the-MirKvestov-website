@@ -8,7 +8,7 @@
 >
 > ➠ [Запуск тестов из терминала](#запуск-тестов-из-терминала)
 >
-> ➠ [Запуск тестов в Jenkins](#-удаленный-запуск-тестов-в-Jenkins)
+> ➠ [Запуск тестов в Jenkins](#удаленный-запуск-тестов-в-Jenkins)
 
 
 <h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
@@ -74,10 +74,9 @@
 ```
 gradle clean test
 ```
-## <img width="4%" title="Jenkins" src="readme_design/logo/Jenkins.svg"> Удаленный запуск тестов в Jenkins
 
-> Для запуска тестов используется параметризированная сборка
+h3>:book:<a name='удаленный-запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
 
-<p align="center">
-<img title="Jenkins" src="readme_design/screens/Jenkins.png">
-</p>
+> Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка"</a>
+
+

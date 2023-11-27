@@ -8,7 +8,7 @@
 >
 > ➠ [Запуск тестов из терминала](#запуск-тестов-из-терминала)
 >
-> ➠ [Запуск тестов в Jenkins](#удаленный-запуск-тестов-в-Jenkins)
+> ➠ [Запуск тестов в Jenkins](#запуск-тестов-в-Jenkins)
 >
 > ➠ [Отчет о результатах тестирования в Allure Report](#allure-отчет)
 
@@ -76,7 +76,7 @@
 gradle clean test
 ```
 
-<h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='удаленный-запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
+<h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
 
 Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка</a>
 

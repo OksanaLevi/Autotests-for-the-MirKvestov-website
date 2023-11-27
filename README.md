@@ -9,7 +9,8 @@
 > ➠ [Запуск тестов из терминала](#запуск-тестов-из-терминала)
 >
 > ➠ [Запуск тестов в Jenkins](#удаленный-запуск-тестов-в-Jenkins)
-
+>
+> ➠ [Отчет о результатах тестирования в Allure Report](#allure-отчет)
 
 <h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
 <p align="center">
@@ -79,4 +80,9 @@ gradle clean test
 
 Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка</a>
 
+<h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
+
+<p align="center">
+<img title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/allure.svg">
+</p>
 

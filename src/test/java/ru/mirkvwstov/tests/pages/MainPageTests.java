@@ -100,6 +100,4 @@ public class MainPageTests extends TestBase {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }
-
-
 }

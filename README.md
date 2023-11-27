@@ -67,7 +67,7 @@
 </ol>
 
 
-<h2><a name='запуск-тестов-из-терминала'>Запуск тестов</a></h2>
+<h2>:book:<a name='запуск-тестов-из-терминала'>Запуск тестов</a></h2>
 
 <h3>:book:<a name='runningTestsLocal'>Запуск тестов из терминала</a></h3>
 
@@ -75,8 +75,8 @@
 gradle clean test
 ```
 
-h3>:book:<a name='удаленный-запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
+<h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='удаленный-запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
 
-> Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка"</a>
+Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка</a>
 
 

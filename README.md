@@ -1,12 +1,17 @@
 <h2>В проекте реализованы UI тесты для <a href='https://mir-kvestov.ru'>сайта "Мир квестов"</a></h2>
 
-<h3>Содержание</h3>
+## Содержание
+
+> ➠ [Архитектура проекта](#архитектура-проекта)
+>
+> ➠ [Стэк проекта](#стэк-проекта)
+>
 > ➠ [Запуск тестов из терминала](#запуск-тестов-из-терминала)
 >
 > ➠ [Запуск тестов в Jenkins](#-удаленный-запуск-тестов-в-Jenkins)
 
 
-<h2><a name='projectStack'>:book:Стек проекта:</a></h2>
+<h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
 <p align="center">
     <a href="#"><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="#"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>
@@ -36,7 +41,7 @@
 
 
 
-<h2>:book:<a name='projectArchitecture'>Архитектура проекта</a></h2>
+<h2>:book:<a name='архитектура-проекта'>Архитектура проекта</a></h2>
 Архитектура проекта состоит из 7 основных модулей
 <ol>
     <li>
@@ -62,15 +67,17 @@
 </ol>
 
 
-<h2><a name='runningTests'>Запуск тестов</a></h2>
+<h2><a name='запуск-тестов-из-терминала'>Запуск тестов</a></h2>
 
-<h3>:book:<a name='runningTestsLocal'>Запуск тестов локально</a></h3>
+<h3>:book:<a name='runningTestsLocal'>Запуск тестов из терминала</a></h3>
 
-Для запуска тестов локально используется команда : <b>gradle clean ....</b>
+```
+gradle clean test
+```
+## <img width="4%" title="Jenkins" src="readme_design/logo/Jenkins.svg"> Удаленный запуск тестов в Jenkins
 
-<p><b>-Durl</b> - ссылка на стенд приложения UI</p>
-<p><b>-DapiUrl</b> - ссылка на стенд приложения API</p>
-<p><b>-Dbrowser</b> - браузер для запуска тестов UI</p>
+> Для запуска тестов используется параметризированная сборка
 
-Так же необходимо указать токен бота и чат в который должны приходить уведомление в телеграмм. Для этого нужно
-отредактировать файл: <b>notifications/telegram.json</b>
+<p align="center">
+<img title="Jenkins" src="readme_design/screens/Jenkins.png">
+</p>

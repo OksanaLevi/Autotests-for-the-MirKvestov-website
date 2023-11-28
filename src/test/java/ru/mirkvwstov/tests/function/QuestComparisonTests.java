@@ -6,7 +6,8 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.pages.ComparisonPage;
+import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
@@ -20,7 +21,8 @@ import static io.qameta.allure.Allure.step;
 public class QuestComparisonTests extends TestBase {
 
 
-    PageObject pageObject = new PageObject();
+    MainPage mainPage = new MainPage();
+    ComparisonPage comparisonPageomparisonPage = new ComparisonPage();
     TestData testData = new TestData();
 
     private final SelenideElement resultsTable = $(".owl-wrapper-outer");
@@ -36,19 +38,19 @@ public class QuestComparisonTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Добавить первый квест для сравнения", () -> {
-            pageObject.addQuestToComparisonPage(testData.questNumberOne);
+            mainPage.addQuestToComparisonPage(testData.questNumberOne);
         });
         step("Добавить второй квест для сравнения", () -> {
-            pageObject.addQuestToComparisonPage(testData.questNumberTwo);
+            mainPage.addQuestToComparisonPage(testData.questNumberTwo);
         });
         step("Перейти на страницу для сравнения квестов", () -> {
-            pageObject.openComparisonPage(testData.pageCompare);
+            mainPage.openComparisonPage(testData.pageCompare);
         });
         step("Проверим, что таблица сравнения открылась ", () -> {
-            pageObject.resultsTableOpened(resultsTable, testData.requiredWordOnComparisonPage);
+            mainPage.resultsTableOpened(resultsTable, testData.requiredWordOnComparisonPage);
         });
         step("Проверим, что в сравнении 2 квеста ", () -> {
-            pageObject.checkThatTwoQuestsInTheComparisonTable();
+            comparisonPageomparisonPage.checkThatTwoQuestsInTheComparisonTable();
         });
 
     }

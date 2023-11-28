@@ -5,7 +5,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
@@ -17,7 +17,7 @@ import static io.qameta.allure.Allure.step;
 @Owner("Левинская Оксана")
 public class SortingQuestsTests extends TestBase {
 
-    PageObject pageObject = new PageObject();
+    MainPage mainPage = new MainPage();
     TestData testData = new TestData();
 
     @Test
@@ -32,10 +32,10 @@ public class SortingQuestsTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Сортируем квесты по популярности", () -> {
-            pageObject.selectSorting(testData.byPopularity);
+            mainPage.selectSorting(testData.byPopularity);
         });
         step("Проверяем популярность квеста из списка с результатами сортировки", () -> {
-            pageObject.checkThePopularityOfTheQuest();
+            mainPage.checkThePopularityOfTheQuest();
         });
     }
 
@@ -51,10 +51,10 @@ public class SortingQuestsTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Сортируем квесты по рейтингу", () -> {
-            pageObject.selectSorting(testData.byRating);
+            mainPage.selectSorting(testData.byRating);
         });
         step("Проверяем рейтинг квеста из списка с результатами сортировки", () -> {
-            pageObject.checkTheRatingOfTheQuest(testData.questAssessment);
+            mainPage.checkTheRatingOfTheQuest(testData.questAssessment);
         });
     }
 

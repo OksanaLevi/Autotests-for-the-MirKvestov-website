@@ -6,8 +6,8 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.mirkvwstov.components.SearchResultsTableComponent;
-import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.pages.components.SearchResultsTableComponent;
+import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
@@ -20,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 @Owner("Левинская Оксана")
 public class MainPageTests extends TestBase {
 
-    PageObject pageObject = new PageObject();
+    MainPage mainPage = new MainPage();
     TestData testData = new TestData();
     SearchResultsTableComponent searchResults = new SearchResultsTableComponent();
 
@@ -37,19 +37,19 @@ public class MainPageTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Проверяем заголовок страницы", () -> {
-            pageObject.checkHeaderOnMainPage(testData.headerMainPage);
+            mainPage.checkHeaderOnMainPage(testData.headerMainPage);
         });
         step("Проверяем наличие фильтров для поиска квеста", () -> {
-            pageObject.checkingForFilterPresence(testData.questTypeFilter);
-            pageObject.checkingForFilterPresence(testData.playerCountFilter);
-            pageObject.checkingForFilterPresence(testData.questDateSelectionMenu);
-            pageObject.checkingForFilterPresence(testData.questTimeMenu);
-            pageObject.findQuestUsingSpecifiedFilters(testData.questSearchButton);
+            mainPage.checkingForFilterPresence(testData.questTypeFilter);
+            mainPage.checkingForFilterPresence(testData.playerCountFilter);
+            mainPage.checkingForFilterPresence(testData.questDateSelectionMenu);
+            mainPage.checkingForFilterPresence(testData.questTimeMenu);
+            mainPage.findQuestUsingSpecifiedFilters(testData.questSearchButton);
         });
         step("Проверка наличия квестов и переход в один из них", () -> {
-            pageObject.goToQuestPage(testData.questNumberOne);
-            pageObject.checkHeaderOnPageQuest(testData.eventTypeOnQuestPageQuest);
-            pageObject.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
+            mainPage.goToQuestPage(testData.questNumberOne);
+            mainPage.checkHeaderOnPageQuest(testData.eventTypeOnQuestPageQuest);
+            mainPage.checkingAvailabilityOfPriceTable(testData.nameOfPriceTable);
         });
     }
 
@@ -65,23 +65,23 @@ public class MainPageTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Выбираем тип квеста - страшный", () -> {
-            pageObject.selectValueFromTheDropdownList(testData.scaryQuest);
+            mainPage.selectValueFromTheDropdownList(testData.scaryQuest);
         });
         step("Выбираем количество участников квеста", () -> {
-            pageObject.selectValueFromTheDropdownList(testData.numberOfPlayers);
+            mainPage.selectValueFromTheDropdownList(testData.numberOfPlayers);
         });
         step("Выбираем дату квеста", () -> {
-            pageObject.selectQuestData(testData.questDateSelectionMenu);
+            mainPage.selectQuestData(testData.questDateSelectionMenu);
         });
         step("Выбираем время квеста", () -> {
-            pageObject.selectValueFromTheDropdownList(testData.questTime);
+            mainPage.selectValueFromTheDropdownList(testData.questTime);
         });
         step("Выполняем поиск квестов по выбранным фильтрам", () -> {
-            pageObject.selectValueFromTheDropdownList(testData.questSearchButton);
+            mainPage.selectValueFromTheDropdownList(testData.questSearchButton);
         });
 
         step("Проверяем, что открылась страница с результатми поиска", () -> {
-            pageObject.resultsTableOpened(resultsSearch, testData.scaryQuestTableResults);
+            mainPage.resultsTableOpened(resultsSearch, testData.scaryQuestTableResults);
         });
         step("Проверяем наличие выбранных ранее фильтров в результатах поиска", () -> {
             searchResults.searchResultsForm(testData.scaryQuest)
@@ -90,7 +90,7 @@ public class MainPageTests extends TestBase {
         });
 
         step("Переход в квест из списка с результатами и проверка его типа на соответствие с выбранным", () -> {
-            pageObject.questTypeCheck(testData.fieldWithQuestType);
+            mainPage.questTypeCheck(testData.fieldWithQuestType);
         });
     }
 

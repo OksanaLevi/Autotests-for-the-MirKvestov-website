@@ -6,7 +6,8 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.mirkvwstov.pages.PageObject;
+import ru.mirkvwstov.pages.MainPage;
+import ru.mirkvwstov.pages.QuestPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
@@ -19,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 @Owner("Левинская Оксана")
 public class QuestPageTests extends TestBase {
 
-    PageObject pageObject = new PageObject();
+    QuestPage questPage = new QuestPage();
     TestData testData = new TestData();
 
     //Параметры проверяемой страницы квеста
@@ -44,13 +45,13 @@ public class QuestPageTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Проверка блока с описанием квеста", () -> {
-            pageObject.checkingForBlockPresence(descriptionBlock, testData.blockTitleWithDescription, descriptionQuest);
+            questPage.checkingForBlockPresence(descriptionBlock, testData.blockTitleWithDescription, descriptionQuest);
         });
         step("Проверка блока с расписанием квестов", () -> {
-            pageObject.checkingForBlockPresence(reservationBlock, testData.blockTitleWithReservation, timeQuest);
+            questPage.checkingForBlockPresence(reservationBlock, testData.blockTitleWithReservation, timeQuest);
         });
         step("Проверка блока с контактами квеста", () -> {
-            pageObject.checkingForBlockPresence(contactsBlock, testData.blockTitleWithContacts, contactsQuest);
+            questPage.checkingForBlockPresence(contactsBlock, testData.blockTitleWithContacts, contactsQuest);
         });
     }
 

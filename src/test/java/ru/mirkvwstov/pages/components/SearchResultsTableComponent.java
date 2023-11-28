@@ -1,4 +1,4 @@
-package ru.mirkvwstov.components;
+package ru.mirkvwstov.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 

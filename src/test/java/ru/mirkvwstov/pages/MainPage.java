@@ -1,90 +1,81 @@
 package ru.mirkvwstov.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
 
-import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PageObject {
+public class MainPage {
+
     private final SelenideElement
-    //на главной странице
             headerMainPage = $("h1"),
             filterQuestType = $("#search-form"),
             questSearchButton = $(".row"),
             firstDateFromTheList = $("#date"),
-            sortMenu = $(".sort__select"),
-    //сравнение квестов
-            numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
-    //на странице квеста
             eventType = $(".game-type"),
             questPrice = $(".timetable"),
             questParameters = $(".masthead"),
-            questRating = $(".quest-rating-populi__value"),
-    //на странице с результатами поиска
-            anyQuestFromTheList = $(".quest-tile-1");
-
+            anyQuestFromTheList = $(".quest-tile-1"),
+            sortMenu = $(".sort__select"),
+            numberOfTeams = $(".quest-rating-populi .quest-rating-populi__team-count_number"),
+            questRating = $(".quest-rating-populi__value");
     private final ElementsCollection
             questPage = $$(".quest-tile-1"),
-            questCompareBtn = $$(".js-quest-compare-btn"),
-            questInTableResults  = $$(".owl-item");
+            questCompareBtn = $$(".js-quest-compare-btn");
 
 
-    //проверки для теста testOfRequiredElementsOnTheMainPage
-    public PageObject checkHeaderOnMainPage(String value) {
+    public MainPage checkHeaderOnMainPage(String value) {
         headerMainPage.shouldHave(text(value));
 
         return this;
     }
-    public PageObject checkingForFilterPresence(String value) {
+    public MainPage checkingForFilterPresence(String value) {
         filterQuestType.shouldHave(text(value));
 
         return this;
     }
-    public PageObject findQuestUsingSpecifiedFilters(String value) {
+    public MainPage findQuestUsingSpecifiedFilters(String value) {
         questSearchButton.shouldHave(text(value));
 
         return this;
     }
-    public PageObject goToQuestPage(int value) {
+    public MainPage goToQuestPage(int value) {
         questPage.get(value).click();
 
         return this;
     }
-    public PageObject checkHeaderOnPageQuest(String quest) {
+    public MainPage checkHeaderOnPageQuest(String quest) {
         eventType.shouldHave(text(quest));
 
         return this;
     }
-    public PageObject checkingAvailabilityOfPriceTable(String value) {
+    public MainPage checkingAvailabilityOfPriceTable(String value) {
         questPrice.shouldHave(text(value));
 
         return this;
     }
 
-    //проверки для теста testFiltersOnTheMainPage
-    public PageObject selectValueFromTheDropdownList(String value) {
+    public MainPage selectValueFromTheDropdownList(String value) {
         $(byText(value)).click();
 
         return this;
     }
-    public PageObject selectQuestData(String value) {
+    public MainPage selectQuestData(String value) {
         firstDateFromTheList.$(byText(value)).sibling(2).click();
 
         return this;
     }
-    public PageObject resultsTableOpened(SelenideElement table, String value) {
+    public MainPage resultsTableOpened(SelenideElement table, String value) {
         table.should(appear);
         table.shouldHave(text(value));
 
         return this;
     }
-    public PageObject questTypeCheck(String value) {
+    public MainPage questTypeCheck(String value) {
         anyQuestFromTheList.click();
         switchTo().window(1);
         questParameters.shouldHave(text(value));
@@ -92,22 +83,13 @@ public class PageObject {
         return this;
     }
 
-    //проверки для тестов класса QuestPageTests
-    public PageObject checkingForBlockPresence(SelenideElement block, String header, String content) {
-        block.shouldHave(text(header));
-        block.shouldHave(text(content));
-
-        return this;
-    }
-
-    //проверки для тестов класса SortingQuestsTests
-    public PageObject selectSorting(String value) {
+    public MainPage selectSorting(String value) {
         sortMenu.click();
         $(".sort__dropdown").$(byText(value)).click();
 
         return this;
     }
-    public PageObject checkThePopularityOfTheQuest() {
+    public MainPage checkThePopularityOfTheQuest() {
         $(anyQuestFromTheList).click();
         String teamsPassedTheQuest = numberOfTeams.getText();
 
@@ -117,26 +99,20 @@ public class PageObject {
 
         return this;
     }
-    public PageObject checkTheRatingOfTheQuest(String value) {
+    public MainPage checkTheRatingOfTheQuest(String value) {
         $(anyQuestFromTheList).click();
         questRating.shouldHave(text(value));
 
         return this;
     }
 
-    //для тестов класса QuestComparisonTests
-    public PageObject addQuestToComparisonPage(int value) {
+    public MainPage addQuestToComparisonPage(int value) {
         questCompareBtn.get(value).click();
 
         return this;
     }
-    public PageObject openComparisonPage (String value) {
+    public MainPage openComparisonPage (String value) {
         open(value);
-        return this;
-    }
-    public PageObject checkThatTwoQuestsInTheComparisonTable () {
-        questInTableResults.shouldHave(size(2));
-
         return this;
     }
 }

@@ -71,10 +71,18 @@
 <h2>:book:<a name='запуск-тестов-из-терминала'>Запуск тестов</a></h2>
 
 <h3><a>Запуск тестов из терминала</a></h3>
+Если gradle установлен на локальный комп:
 
 ```
 gradle clean test
 ```
+
+Если не установлен (минимальная версия локальной java - 17):
+
+```
+./gradlew clean test
+```
+
 
 <h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
 

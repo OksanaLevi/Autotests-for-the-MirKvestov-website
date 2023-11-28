@@ -3,6 +3,12 @@ plugins {
     id 'io.qameta.allure' version '2.11.2'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -28,7 +34,7 @@ allure {
 
 dependencies {
     testImplementation (
-            'com.codeborne:selenide:6.14.0',
+            'com.codeborne:selenide:6.19.1',
             "io.qameta.allure:allure-selenide:$allureVersion",
             'com.github.javafaker:javafaker:1.0.2',
             'org.junit.jupiter:junit-jupiter:5.9.3',

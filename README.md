@@ -11,6 +11,8 @@
 > ➠ [Запуск тестов в Jenkins](#запуск-тестов-в-Jenkins)
 >
 > ➠ [Отчет о результатах тестирования в Allure Report](#allure-отчет)
+> 
+> ➠ [Отправка результатов запуска в Telegram](#уведомления-в-telegram)
 
 <h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
 <p align="center">
@@ -94,3 +96,6 @@ gradle clean test
 <img title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/allure.svg">
 </p>
 
+<h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
+После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
+С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 

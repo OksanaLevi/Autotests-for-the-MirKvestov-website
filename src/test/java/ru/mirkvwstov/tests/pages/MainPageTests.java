@@ -6,8 +6,8 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.mirkvwstov.pages.components.SearchResultsTableComponent;
 import ru.mirkvwstov.pages.MainPage;
+import ru.mirkvwstov.pages.components.SearchResultsTableComponent;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 

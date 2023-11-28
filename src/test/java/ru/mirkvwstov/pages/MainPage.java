@@ -33,26 +33,31 @@ public class MainPage {
 
         return this;
     }
+
     public MainPage checkingForFilterPresence(String value) {
         filterQuestType.shouldHave(text(value));
 
         return this;
     }
+
     public MainPage findQuestUsingSpecifiedFilters(String value) {
         questSearchButton.shouldHave(text(value));
 
         return this;
     }
+
     public MainPage goToQuestPage(int value) {
         questPage.get(value).click();
 
         return this;
     }
+
     public MainPage checkHeaderOnPageQuest(String quest) {
         eventType.shouldHave(text(quest));
 
         return this;
     }
+
     public MainPage checkingAvailabilityOfPriceTable(String value) {
         questPrice.shouldHave(text(value));
 
@@ -64,17 +69,20 @@ public class MainPage {
 
         return this;
     }
+
     public MainPage selectQuestData(String value) {
         firstDateFromTheList.$(byText(value)).sibling(2).click();
 
         return this;
     }
+
     public MainPage resultsTableOpened(SelenideElement table, String value) {
         table.should(appear);
         table.shouldHave(text(value));
 
         return this;
     }
+
     public MainPage questTypeCheck(String value) {
         anyQuestFromTheList.click();
         switchTo().window(1);
@@ -89,6 +97,7 @@ public class MainPage {
 
         return this;
     }
+
     public MainPage checkThePopularityOfTheQuest() {
         $(anyQuestFromTheList).click();
         String teamsPassedTheQuest = numberOfTeams.getText();
@@ -99,6 +108,7 @@ public class MainPage {
 
         return this;
     }
+
     public MainPage checkTheRatingOfTheQuest(String value) {
         $(anyQuestFromTheList).click();
         questRating.shouldHave(text(value));
@@ -111,7 +121,8 @@ public class MainPage {
 
         return this;
     }
-    public MainPage openComparisonPage (String value) {
+
+    public MainPage openComparisonPage(String value) {
         open(value);
         return this;
     }

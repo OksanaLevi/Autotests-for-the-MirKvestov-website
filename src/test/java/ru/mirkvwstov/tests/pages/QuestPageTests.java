@@ -6,7 +6,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.pages.QuestPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
@@ -23,7 +22,6 @@ public class QuestPageTests extends TestBase {
     QuestPage questPage = new QuestPage();
     TestData testData = new TestData();
 
-    //Параметры проверяемой страницы квеста
     private final String
             questUrl = "/quests/quest-stars-the-astral",
             descriptionQuest = "Вы – группа друзей, которая жаждет погрузиться в астрал",

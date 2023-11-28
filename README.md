@@ -13,6 +13,8 @@
 > ➠ [Отчет о результатах тестирования в Allure Report](#allure-отчет)
 > 
 > ➠ [Отправка результатов запуска в Telegram](#уведомления-в-telegram)
+> 
+> ➠ [Пример запуска теста в Selenoid](#пример-запуска-теста-в-selenoid)
 
 <h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
 <p align="center">
@@ -101,4 +103,11 @@ gradle clean test
 С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 
 <p>
 <img width="50%" title="message telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/telegram_message.svg">
+</p>
+
+<h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска теста в Selenoid</a></h3>
+К каждому тесту в Allure-отчете прилагается видео. Одно из таких видео представлено ниже.
+
+<p>
+<img title="Selenoid_gif" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Sorting_test.gif">
 </p>

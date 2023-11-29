@@ -99,7 +99,7 @@ gradle clean test
 <img width="90%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/allure_report.svg">
 </p>
 
-<h3><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"><a name='тк-в-allure-test-ops'>Тестовая документация в Allure Test Ops</a></h3>
+<h3><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"><a name='тк-в-allure-test-ops'>Тестовая документация в Allure TestOps</a></h3>
 
 <p>
 <img width="90%" title="Allure_TestOps" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Allure_TestOps.svg">
@@ -127,7 +127,7 @@ gradle clean test
 <img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/telegram_message.svg">
 </p>
 
-<h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска теста в Selenoid</a></h3>
+<h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска UI-теста в Selenoid</a></h3>
 К каждому тесту в Allure-отчете прилагается видео. Одно из таких видео представлено ниже.
 
 <p>

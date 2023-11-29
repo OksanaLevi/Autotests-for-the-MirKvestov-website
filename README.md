@@ -111,13 +111,13 @@ gradle clean test
 Так выглядят прикрепленные тест-кейсы к тикету в Jira:
 
 <p>
-<img width="50%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_task_with_test_case.svg">
+<img width="70%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_task_with_test_case.svg">
 </p>
 
 Есть возможность по клику на тест ознакомиться с его шагами:
 
 <p>
-<img width="70%" title="Jira_steps_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_steps_test_case.svg">
+<img width="65%" title="Jira_steps_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_steps_test_case.svg">
 </p>
 
 <h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>

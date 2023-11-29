@@ -53,7 +53,7 @@
 Архитектура проекта состоит из 5 основных модулей
 <ol>
     <li>
-        <b>TestBase</b> - базовый класс с конфигурацией от которого наследуются все классы с тестами. Содержит методы BeforeEach и AfterEach.
+        <b>TestBase</b> - базовый класс с конфигурацией от которого наследуются все классы с тестами. Содержит методы <code>BeforeEach</code> и <code>AfterEach</code>.
     </li>
     <li>
         <b>Tests</b> - классы описывающие логику работы теста, основываясь на бизнесс требованиях. Тесты разделены на страничные (главная, страница квеста) и функциональные (сортировка, сравнение).
@@ -104,9 +104,9 @@ gradle clean test
 </p>
 
 <h3><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
-В Allure TestOps настроена интеграция с Jira. Благодаря этому можно прикрепить тестовую модель к тикету в Jira, а также перейти по гиперрсылке для ознакомления с результатами запусков.
+В <code>Allure TestOps</code> настроена интеграция с <code>Jira</code>. Благодаря этому можно прикрепить тестовую модель к тикету в <code>Jira</code>, а также перейти по гиперрсылке для ознакомления с результатами запусков.
 
-Так выглядят прикрепленные тест-кейсы к тикету в Jira:
+Так выглядят прикрепленные тест-кейсы к тикету в <code>Jira</code>:
 
 <p>
 <img width="70%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_task_with_test_case.svg">
@@ -126,7 +126,7 @@ gradle clean test
 </p>
 
 <h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска UI-теста в Selenoid</a></h3>
-К каждому тесту в Allure-отчете прилагается видео. Одно из таких видео представлено ниже.
+К каждому тесту в <code>Allure-отчете</code> прилагается видео. Одно из таких видео представлено ниже.
 
 <p>
 <img title="Selenoid_gif" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Sorting_test.gif">

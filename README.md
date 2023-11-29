@@ -125,8 +125,9 @@ gradle clean test
 <img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/telegram_message.svg">
 </p>
 
-<h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска UI-теста в Selenoid</a></h3>
-К каждому тесту в <code>Allure-отчете</code> прилагается видео. Одно из таких видео представлено ниже.
+<h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска тестов в Selenoid</a></h3>
+К каждому тесту в <code>Allure-отчете</code> прилагается видео.
+Видео запуска UI-теста:
 
 <p>
 <img title="Selenoid_gif" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Sorting_test.gif">

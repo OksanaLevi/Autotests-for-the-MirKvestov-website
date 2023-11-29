@@ -20,7 +20,7 @@
 
 
 
-<h2><a name='стэк-проекта'>:hammer:Стек проекта:</a></h2>
+<h2><a name='стэк-проекта'>:package:Стек проекта:</a></h2>
 <p align="center">
     <a href="https://www.java.com/""><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="https://gradle.org/"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>
@@ -72,7 +72,7 @@
 </ol>
 
 
-<h2>:book:<a name='запуск-тестов-из-терминала'>Запуск тестов</a></h2>
+<h2>:hammer:<a name='запуск-тестов-из-терминала'>Запуск тестов</a></h2>
 
 <h3><a>Запуск тестов из терминала</a></h3>
 Если gradle установлен на локальный комп:

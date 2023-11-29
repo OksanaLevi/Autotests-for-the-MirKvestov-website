@@ -20,7 +20,7 @@
 
 
 
-<h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
+<h2><a name='стэк-проекта'>:hammer:Стек проекта:</a></h2>
 <p align="center">
     <a href="https://www.java.com/""><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="https://gradle.org/"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>
@@ -50,7 +50,7 @@
 
 
 
-<h2>:book:<a name='архитектура-проекта'>Архитектура проекта</a></h2>
+<h2>:notebook_with_decorative_cover:<a name='архитектура-проекта'>Архитектура проекта</a></h2>
 Архитектура проекта состоит из 5 основных модулей
 <ol>
     <li>

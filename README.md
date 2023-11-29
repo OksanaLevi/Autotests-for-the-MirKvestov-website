@@ -12,9 +12,14 @@
 >
 > ➠ [Отчет о результатах тестирования в Allure Report](#allure-отчет)
 > 
+> ➠ [Тестовая документация в Allure Test Ops](#тк-в-allure-test-ops)
+> 
+> ➠ [Тестовая документация в Jira](#тк-в-jira)
+> 
 > ➠ [Отправка результатов запуска в Telegram](#уведомления-в-telegram)
 > 
 > ➠ [Видео-пример запуска теста в Selenoid](#пример-запуска-теста-в-selenoid)
+
 
 <h2><a name='стэк-проекта'>:book:Стек проекта:</a></h2>
 <p align="center">
@@ -88,17 +93,38 @@ gradle clean test
 
 Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка</a>
 
-<h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/allure_report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
+<h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
 
 <p>
 <img width="90%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/allure_report.svg">
+</p>
+
+<h3><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"><a name='тк-в-allure-test-ops'>Тестовая документация в Allure Test Ops</a></h3>
+
+<p>
+<img width="90%" title="Allure_TestOps" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Allure_TestOps.svg">
+</p>
+
+<h3><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
+В Allure TestOps настроена интеграция с Jira. Благодаря этому можно прикрепить тестовую модель к тикету в Jira, а также перейти по гиперрсылке для ознакомления с результатами запусков.
+
+Так выглядят прикрепленные тест-кейсы к тикету в Jira:
+
+<p>
+<img width="50%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_task_with_test_case.svg">
+</p>
+
+Есть возможность по клику на тест ознакомиться с его шагами:
+
+<p>
+<img width="70%" title="Jira_steps_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_steps_test_case.svg">
 </p>
 
 <h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 
 <p>
-<img width="50%" title="message telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/telegram_message.svg">
+<img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/telegram_message.svg">
 </p>
 
 <h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска теста в Selenoid</a></h3>

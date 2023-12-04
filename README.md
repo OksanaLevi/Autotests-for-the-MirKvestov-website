@@ -94,13 +94,13 @@ gradle clean test
 <h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
 
 <p>
-<img width="90%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/allure_report.svg">
+<img width="90%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/readme_design/screens/allure_report.svg">
 </p>
 
 <h3><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"><a name='тк-в-allure-test-ops'>Тестовая документация в Allure TestOps</a></h3>
 
 <p>
-<img width="90%" title="Allure_TestOps" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Allure_TestOps.svg">
+<img width="90%" title="Allure_TestOps" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/readme_design/screens/Allure_TestOps.svg">
 </p>
 
 <h3><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
@@ -109,20 +109,20 @@ gradle clean test
 Так выглядят прикрепленные тест-кейсы к тикету в <code>Jira</code>:
 
 <p>
-<img width="70%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_task_with_test_case.svg">
+<img width="70%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/readme_design/screens/Jira_task_with_test_case.svg">
 </p>
 
 Есть возможность по клику на тест ознакомиться с его шагами:
 
 <p>
-<img width="65%" title="Jira_steps_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Jira_steps_test_case.svg">
+<img width="65%" title="Jira_steps_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/readme_design/screens/Jira_steps_test_case.svg">
 </p>
 
 <h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 
 <p>
-<img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/telegram_message.svg">
+<img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/readme_design/screens/telegram_message.svg">
 </p>
 
 <h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска тестов в Selenoid</a></h3>
@@ -130,5 +130,5 @@ gradle clean test
 Видео запуска UI-теста:
 
 <p>
-<img title="Selenoid_gif" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/src/test/resources/Sorting_test.gif">
+<img title="Selenoid_gif" src="https://github.com/OksanaLevi/Autotests-for-the-MirKvestov-website/blob/main/readme_design/gifs/Sorting_test.gif">
 </p>

@@ -1,4 +1,4 @@
-package ru.mirkvwstov.tests.pages;
+package ru.mirkvwstov.tests.main;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;

@@ -52,7 +52,6 @@ public class QuestComparisonTests extends TestBase {
         step("Проверим, что в сравнении 2 квеста ", () -> {
             comparisonPageomparisonPage.checkThatTwoQuestsInTheComparisonTable();
         });
-
     }
 
     @BeforeEach

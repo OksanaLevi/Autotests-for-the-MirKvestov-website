@@ -38,7 +38,6 @@
 	<li>Gradle - используется для сборки проекта</li>
 	<li>Junit5 - тестовый фремворк</li>
 	<li>Selenide - библиотека для работы с UI элементами страницы</li>
-  <li>RestAssured - библиотека для работы с API</li>
 	<li>Allure - для формирования отчетов</li>
 	<li>Jenkins - используется для запуска тестов</li>
 	<li>Selenoid - используется для создания контейнеров для прохождения тестов</li>
@@ -89,7 +88,7 @@ gradle clean test
 
 <h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
 
-Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_autotests_in_jenkins_OksanaL'>параметризированная сборка</a>
+Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_UI_WEB_autotests_OksanaL/'>параметризированная сборка</a>
 
 <h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
 

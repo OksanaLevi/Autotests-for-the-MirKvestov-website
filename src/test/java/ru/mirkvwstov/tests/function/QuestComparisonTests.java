@@ -1,16 +1,17 @@
 package ru.mirkvwstov.tests.function;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 import ru.mirkvwstov.pages.ComparisonPage;
 import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 @Epic("Главная страница сайта Мир Квестов")
@@ -33,6 +34,9 @@ public class QuestComparisonTests extends TestBase {
     @DisplayName("Проверка функции сравнения 2 квестов")
     void compareTwoQuestsTest() {
 
+        step("Открыть страницу", () -> {
+            mainPage.openPage();
+        });
         step("Добавить первый квест для сравнения", () -> {
             mainPage.addQuestToComparisonPage(testData.questNumberOne);
         });
@@ -48,12 +52,5 @@ public class QuestComparisonTests extends TestBase {
         step("Проверим, что в сравнении 2 квеста ", () -> {
             comparisonPageomparisonPage.checkThatTwoQuestsInTheComparisonTable();
         });
-    }
-
-    @BeforeEach
-    void beforeEach() {
-        Selenide.open("");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
     }
 }

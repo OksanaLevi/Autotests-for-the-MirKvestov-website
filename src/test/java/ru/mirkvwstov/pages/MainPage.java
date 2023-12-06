@@ -1,6 +1,7 @@
 package ru.mirkvwstov.pages;
 
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
 
@@ -27,6 +28,13 @@ public class MainPage {
             questPage = $$(".quest-tile-1"),
             questCompareBtn = $$(".js-quest-compare-btn");
 
+    public MainPage openPage() {
+        Selenide.open("");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
+
+        return this;
+    }
 
     public MainPage checkHeaderOnMainPage(String value) {
         headerMainPage.shouldHave(text(value));

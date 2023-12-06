@@ -38,6 +38,9 @@ public class QuestPageTests extends TestBase {
     @DisplayName("Проверка наличия обязательных блоков на странице квеста")
     void testForThePresenceOfRequiredBlocks() {
 
+        step("Открыть страницу", () -> {
+            questPage.openPage(questUrl);
+        });
         step("Проверка блока с описанием квеста", () -> {
             questPage.checkingForBlockPresence(descriptionBlock, testData.blockTitleWithDescription, descriptionQuest);
         });

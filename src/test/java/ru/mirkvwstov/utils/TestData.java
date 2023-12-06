@@ -3,26 +3,26 @@ package ru.mirkvwstov.utils;
 public class TestData {
 
     public String
-    //главнная страница
+            //главнная страница
             headerMainPage = "Мир Квестов в реальности",
             questTypeFilter = "Тип квеста",
             playerCountFilter = "Игроков",
             questDateSelectionMenu = "Дата",
             questTimeMenu = "Время",
-            questSearchButton ="Найти",
+            questSearchButton = "Найти",
             scaryQuestTableResults = "Тип игры",
     //страница сравнения
-            pageCompare = "https://mir-kvestov.ru/compare",
+    pageCompare = "https://mir-kvestov.ru/compare",
             requiredWordOnComparisonPage = "Убрать из сравнения",
     // фильтры на главной странице
-            scaryQuest = "Страшные",
+    scaryQuest = "Страшные",
             numberOfPlayers = "4",
             questTime = "с 20:00 до 21:00",
     //сортировка на главной странице
-            byPopularity = "По популярности",
+    byPopularity = "По популярности",
             byRating = "Народный рейтинг",
     //страница квеста
-            eventTypeOnQuestPageQuest = "Квест",
+    eventTypeOnQuestPageQuest = "Квест",
             nameOfPriceTable = "Стоимость игры:",
             fieldWithQuestType = "Уровень страха",
             blockTitleWithDescription = "Описание",

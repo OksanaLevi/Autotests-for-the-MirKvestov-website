@@ -1,13 +1,14 @@
 package ru.mirkvwstov.tests.function;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 @Epic("Главная страница сайта Мир Квестов")
@@ -27,7 +28,9 @@ public class SortingQuestsTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка сортировки квестов по популярности")
     void sortingQuestsByPopularityTest() {
-
+        step("Открыть страницу", () -> {
+            mainPage.openPage();
+        });
         step("Сортируем квесты по популярности", () -> {
             mainPage.selectSorting(testData.byPopularity);
         });
@@ -46,18 +49,14 @@ public class SortingQuestsTests extends TestBase {
     @DisplayName("Проверка сортировки квестов по рейтингу")
     void sortingQuestsByRatingTest() {
 
+        step("Открыть страницу", () -> {
+            mainPage.openPage();
+        });
         step("Сортируем квесты по рейтингу", () -> {
             mainPage.selectSorting(testData.byRating);
         });
         step("Проверяем рейтинг квеста из списка с результатами сортировки", () -> {
             mainPage.checkTheRatingOfTheQuest(testData.questAssessment);
         });
-    }
-
-    @BeforeEach
-    void beforeEach() {
-        Selenide.open("");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
     }
 }

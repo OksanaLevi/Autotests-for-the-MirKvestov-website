@@ -1,16 +1,17 @@
 package ru.mirkvwstov.tests.main;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.pages.components.SearchResultsTableComponent;
 import ru.mirkvwstov.tests.TestBase;
 import ru.mirkvwstov.utils.TestData;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 @Epic("Главная страница сайта Мир Квестов")
@@ -33,6 +34,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверка наличия обязательных блоков на главной странице")
     void testOfRequiredElementsOnTheMainPage() {
 
+        step("Открыть страницу", () -> {
+            mainPage.openPage();
+        });
         step("Проверяем заголовок страницы", () -> {
             mainPage.checkHeaderOnMainPage(testData.headerMainPage);
         });
@@ -60,6 +64,9 @@ public class MainPageTests extends TestBase {
     @DisplayName("Проверяем работу фильтров на главной странице")
     void testFiltersOnTheMainPage() {
 
+        step("Открыть страницу", () -> {
+            mainPage.openPage();
+        });
         step("Выбираем тип квеста - страшный", () -> {
             mainPage.selectValueFromTheDropdownList(testData.scaryQuest);
         });
@@ -88,12 +95,5 @@ public class MainPageTests extends TestBase {
         step("Переход в квест из списка с результатами и проверка его типа на соответствие с выбранным", () -> {
             mainPage.questTypeCheck(testData.fieldWithQuestType);
         });
-    }
-
-    @BeforeEach
-    void beforeEach() {
-        Selenide.open("");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
     }
 }

@@ -19,7 +19,7 @@
 > ➠ [Видео-пример запуска теста в Selenoid](#пример-запуска-теста-в-selenoid)
 
 
-<h2><a name='стэк-проекта'>:package:Стек проекта:</a></h2>
+<h2>:package:<a name='стэк-проекта'>Стек проекта:</a></h2>
 <p align="center">
     <a href="https://www.java.com/""><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="https://gradle.org/"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>

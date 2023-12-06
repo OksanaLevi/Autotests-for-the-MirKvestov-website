@@ -2,9 +2,7 @@ package ru.mirkvwstov.tests.main;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.pages.components.SearchResultsTableComponent;
@@ -34,7 +32,6 @@ public class MainPageTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка наличия обязательных блоков на главной странице")
     void testOfRequiredElementsOnTheMainPage() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Проверяем заголовок страницы", () -> {
             mainPage.checkHeaderOnMainPage(testData.headerMainPage);
@@ -62,7 +59,6 @@ public class MainPageTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверяем работу фильтров на главной странице")
     void testFiltersOnTheMainPage() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Выбираем тип квеста - страшный", () -> {
             mainPage.selectValueFromTheDropdownList(testData.scaryQuest);
@@ -96,7 +92,7 @@ public class MainPageTests extends TestBase {
 
     @BeforeEach
     void beforeEach() {
-        Selenide.open("/");
+        Selenide.open("");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }

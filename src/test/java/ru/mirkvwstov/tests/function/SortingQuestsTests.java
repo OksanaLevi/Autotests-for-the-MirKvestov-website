@@ -1,9 +1,7 @@
 package ru.mirkvwstov.tests.function;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.MainPage;
 import ru.mirkvwstov.tests.TestBase;
@@ -29,7 +27,6 @@ public class SortingQuestsTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка сортировки квестов по популярности")
     void sortingQuestsByPopularityTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Сортируем квесты по популярности", () -> {
             mainPage.selectSorting(testData.byPopularity);
@@ -48,7 +45,6 @@ public class SortingQuestsTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка сортировки квестов по рейтингу")
     void sortingQuestsByRatingTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Сортируем квесты по рейтингу", () -> {
             mainPage.selectSorting(testData.byRating);
@@ -60,7 +56,7 @@ public class SortingQuestsTests extends TestBase {
 
     @BeforeEach
     void beforeEach() {
-        Selenide.open("/");
+        Selenide.open("");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }

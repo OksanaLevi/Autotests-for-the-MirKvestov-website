@@ -2,9 +2,7 @@ package ru.mirkvwstov.tests.function;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.ComparisonPage;
 import ru.mirkvwstov.pages.MainPage;
@@ -21,11 +19,10 @@ import static io.qameta.allure.Allure.step;
 public class QuestComparisonTests extends TestBase {
 
 
+    private final SelenideElement resultsTable = $(".owl-wrapper-outer");
     MainPage mainPage = new MainPage();
     ComparisonPage comparisonPageomparisonPage = new ComparisonPage();
     TestData testData = new TestData();
-
-    private final SelenideElement resultsTable = $(".owl-wrapper-outer");
 
     @Test
     @Tags({
@@ -35,7 +32,6 @@ public class QuestComparisonTests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("Проверка функции сравнения 2 квестов")
     void compareTwoQuestsTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Добавить первый квест для сравнения", () -> {
             mainPage.addQuestToComparisonPage(testData.questNumberOne);
@@ -56,7 +52,7 @@ public class QuestComparisonTests extends TestBase {
 
     @BeforeEach
     void beforeEach() {
-        Selenide.open("/");
+        Selenide.open("");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }

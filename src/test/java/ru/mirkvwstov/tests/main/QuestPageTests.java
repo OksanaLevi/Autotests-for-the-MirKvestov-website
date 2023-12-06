@@ -2,9 +2,7 @@ package ru.mirkvwstov.tests.main;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.mirkvwstov.pages.QuestPage;
 import ru.mirkvwstov.tests.TestBase;
@@ -19,11 +17,8 @@ import static io.qameta.allure.Allure.step;
 @Owner("Левинская Оксана")
 public class QuestPageTests extends TestBase {
 
-    QuestPage questPage = new QuestPage();
-    TestData testData = new TestData();
-
     private final String
-            questUrl = "/quests/quest-stars-the-astral",
+            questUrl = "quests/quest-stars-the-astral",
             descriptionQuest = "Вы – группа друзей, которая жаждет погрузиться в астрал",
             timeQuest = "10:00",
             contactsQuest = " м.";
@@ -31,6 +26,8 @@ public class QuestPageTests extends TestBase {
             descriptionBlock = $("#description"),
             reservationBlock = $("#timetable"),
             contactsBlock = $("#contacts");
+    QuestPage questPage = new QuestPage();
+    TestData testData = new TestData();
 
     @Test
     @Tags({
@@ -40,7 +37,6 @@ public class QuestPageTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка наличия обязательных блоков на странице квеста")
     void testForThePresenceOfRequiredBlocks() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Проверка блока с описанием квеста", () -> {
             questPage.checkingForBlockPresence(descriptionBlock, testData.blockTitleWithDescription, descriptionQuest);
